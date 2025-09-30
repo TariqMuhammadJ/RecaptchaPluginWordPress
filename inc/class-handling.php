@@ -47,7 +47,8 @@ class HandleForm {
         ]);
 
         $body = json_decode(wp_remote_retrieve_body($remote), true);
-        error_log($body);
+        error_log(print_r($body, true));
+
         return isset($body['success']) && $body['success'];
     }
 
